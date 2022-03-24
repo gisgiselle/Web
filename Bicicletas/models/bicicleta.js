@@ -22,6 +22,24 @@ exports.create = (bicicleta) => {
       });
   }
 
+exports.delete = (id) => {
+  // Realiza la consulta dentro de knex
+  knex('bicicletas').del()
+  .where({id:id})
+}
+
+exports.show = (id) => {
+	return knex
+	.from('bicicletas')
+	.where('id', id)
+	.first()
+}
+
+exports.update = (id, color, modelo, lat, long) =>{
+	knex('bicicletas')
+	.update({color, modelo, lat, long})
+	.where({id})
+}
 // Obtiene todos los productos en la base
 exports.all = () => {
   // Realiza la consulta dentro de knex

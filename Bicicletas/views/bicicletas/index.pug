@@ -9,8 +9,8 @@ block content
                 th Color
                 th Modelo
                 th Ubicacion
-                th
-                th
+                th Longitud
+                th Latitud
         tbody 
             each bici in bicis
                 tr
@@ -18,7 +18,8 @@ block content
                     td=bici.color
                     td=bici.modelo
                     td=bici.ubicacion
-                    td
+                    td=bici.long 
+                    td=bici.lat
                         a(href='bicicletas/' + bici.id + '/update') Editar
                     td 
                         form.inline(method='post' action='/bicicletas/' + bici.id + '/delete')
